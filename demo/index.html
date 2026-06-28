@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cargo-loading-viz — animated 3D cargo loading</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <canvas id="viz" aria-label="3D cargo loading visualization"></canvas>
+
+      <header class="masthead">
+        <h1>cargo&#8202;<span>loading</span>&#8202;viz</h1>
+        <p id="caption" class="caption"></p>
+      </header>
+
+      <section class="panel" aria-label="Controls">
+        <div class="field">
+          <span class="label">Vehicle</span>
+          <div class="segmented" id="vehicle" role="group" aria-label="Vehicle preset">
+            <button data-vehicle="truck">Truck</button>
+            <button data-vehicle="ship" class="is-on">Ship</button>
+            <button data-vehicle="plane">Plane</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label">Theme</span>
+          <div class="segmented" id="theme" role="group" aria-label="Theme">
+            <button data-theme="dark" class="is-on">Dark</button>
+            <button data-theme="light">Light</button>
+          </div>
+        </div>
+
+        <div class="field row">
+          <label class="switch"><input type="checkbox" id="autorotate" checked /> Autorotate</label>
+          <label class="switch"><input type="checkbox" id="labels" checked /> Labels</label>
+        </div>
+
+        <div class="field">
+          <span class="label">Sample cargo</span>
+          <div class="chips" id="fleets"></div>
+        </div>
+
+        <div class="field">
+          <span class="label">Items <em>— description | qty | litres | form</em></span>
+          <textarea id="editor" spellcheck="false" rows="6"></textarea>
+        </div>
+
+        <div class="legend" id="legend" aria-label="Item legend"></div>
+
+        <button class="record" id="record">● Record 5s WebM</button>
+        <p class="hint">drag to orbit · scroll to zoom · double-click to reset</p>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

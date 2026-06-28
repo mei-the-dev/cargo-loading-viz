@@ -1,0 +1,84 @@
+{
+  "name": "cargo-loading-viz",
+  "version": "0.1.0",
+  "description": "Animated 3D cargo-loading visualization — pack items into ULDs and render them colour-coded inside a truck, ship, or plane. Zero runtime dependencies, Canvas 2D.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "cargo",
+    "logistics",
+    "visualization",
+    "3d",
+    "canvas",
+    "bin-packing",
+    "unitization",
+    "uld",
+    "shipping",
+    "freight"
+  ],
+  "author": "mei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mei/cargo-loading-viz.git"
+  },
+  "homepage": "https://github.com/mei/cargo-loading-viz#readme",
+  "bugs": {
+    "url": "https://github.com/mei/cargo-loading-viz/issues"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo": "vite demo",
+    "demo:build": "vite build demo",
+    "test:visual": "playwright test",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}

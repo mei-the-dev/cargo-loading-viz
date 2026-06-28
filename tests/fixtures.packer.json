@@ -1,0 +1,262 @@
+{
+  "inputs": {
+    "loose_mix": [
+      {
+        "description": "OLEO 209L OMALA",
+        "quantity": 4,
+        "volume_l": 209.0,
+        "packaging_form": "drum"
+      },
+      {
+        "description": "BIOCIDA THPS75",
+        "quantity": 2,
+        "volume_l": 25.0,
+        "packaging_form": "pail"
+      },
+      {
+        "description": "KIT DISCO RIGIDO",
+        "quantity": 1,
+        "volume_l": 3.5,
+        "packaging_form": "box"
+      }
+    ],
+    "self_container": [
+      {
+        "description": "CONTAINER DRY 20FT",
+        "quantity": 1,
+        "volume_l": 30000.0,
+        "packaging_form": "container"
+      },
+      {
+        "description": "IBC AGUA",
+        "quantity": 3,
+        "volume_l": 1000.0,
+        "packaging_form": "ibc"
+      }
+    ],
+    "oversize": [
+      {
+        "description": "BLOCO MOTOR",
+        "quantity": 1,
+        "volume_l": 90000.0,
+        "packaging_form": "box"
+      }
+    ],
+    "many_small": [
+      {
+        "description": "PARAFUSO M12 CX",
+        "quantity": 50,
+        "volume_l": 8.0,
+        "packaging_form": "box"
+      }
+    ],
+    "fill_stack": [
+      {
+        "description": "A",
+        "quantity": 1,
+        "volume_l": 1500.0,
+        "packaging_form": "box"
+      },
+      {
+        "description": "B",
+        "quantity": 1,
+        "volume_l": 1500.0,
+        "packaging_form": "box"
+      },
+      {
+        "description": "C",
+        "quantity": 1,
+        "volume_l": 500.0,
+        "packaging_form": "box"
+      }
+    ]
+  },
+  "expected": {
+    "loose_mix": [
+      {
+        "uld_type": "CESTA",
+        "length_m": 3.05,
+        "width_m": 1.22,
+        "height_m": 1.4,
+        "fill": 0.244,
+        "n_units": 7,
+        "contents": [
+          {
+            "item_index": 0,
+            "description": "OLEO 209L OMALA",
+            "count": 4,
+            "volume_l": 836.0,
+            "y0": 0.0,
+            "y1": 0.321
+          },
+          {
+            "item_index": 1,
+            "description": "BIOCIDA THPS75",
+            "count": 2,
+            "volume_l": 50.0,
+            "y0": 0.321,
+            "y1": 0.3402
+          },
+          {
+            "item_index": 2,
+            "description": "KIT DISCO RIGIDO",
+            "count": 1,
+            "volume_l": 3.5,
+            "y0": 0.3402,
+            "y1": 0.3415
+          }
+        ]
+      }
+    ],
+    "self_container": [
+      {
+        "uld_type": "CONTAINER",
+        "length_m": 6.06,
+        "width_m": 2.44,
+        "height_m": 2.39,
+        "fill": 0.849,
+        "n_units": 1,
+        "contents": [
+          {
+            "item_index": 0,
+            "description": "CONTAINER DRY 20FT",
+            "count": 1,
+            "volume_l": 30000.0,
+            "y0": 0.0,
+            "y1": 2.0289
+          }
+        ]
+      },
+      {
+        "uld_type": "IBC",
+        "length_m": 1.2,
+        "width_m": 1.0,
+        "height_m": 1.2,
+        "fill": 0.694,
+        "n_units": 1,
+        "contents": [
+          {
+            "item_index": 1,
+            "description": "IBC AGUA",
+            "count": 1,
+            "volume_l": 1000.0,
+            "y0": 0.0,
+            "y1": 0.8333
+          }
+        ]
+      },
+      {
+        "uld_type": "IBC",
+        "length_m": 1.2,
+        "width_m": 1.0,
+        "height_m": 1.2,
+        "fill": 0.694,
+        "n_units": 1,
+        "contents": [
+          {
+            "item_index": 1,
+            "description": "IBC AGUA",
+            "count": 1,
+            "volume_l": 1000.0,
+            "y0": 0.0,
+            "y1": 0.8333
+          }
+        ]
+      },
+      {
+        "uld_type": "IBC",
+        "length_m": 1.2,
+        "width_m": 1.0,
+        "height_m": 1.2,
+        "fill": 0.694,
+        "n_units": 1,
+        "contents": [
+          {
+            "item_index": 1,
+            "description": "IBC AGUA",
+            "count": 1,
+            "volume_l": 1000.0,
+            "y0": 0.0,
+            "y1": 0.8333
+          }
+        ]
+      }
+    ],
+    "oversize": [
+      {
+        "uld_type": "BOX",
+        "length_m": 6.06,
+        "width_m": 2.44,
+        "height_m": 2.39,
+        "fill": 1.0,
+        "n_units": 1,
+        "contents": [
+          {
+            "item_index": 0,
+            "description": "BLOCO MOTOR",
+            "count": 1,
+            "volume_l": 35339.5,
+            "y0": 0.0,
+            "y1": 2.39
+          }
+        ]
+      }
+    ],
+    "many_small": [
+      {
+        "uld_type": "CESTA",
+        "length_m": 3.05,
+        "width_m": 1.22,
+        "height_m": 1.4,
+        "fill": 0.11,
+        "n_units": 50,
+        "contents": [
+          {
+            "item_index": 0,
+            "description": "PARAFUSO M12 CX",
+            "count": 50,
+            "volume_l": 400.0,
+            "y0": 0.0,
+            "y1": 0.1536
+          }
+        ]
+      }
+    ],
+    "fill_stack": [
+      {
+        "uld_type": "CESTA",
+        "length_m": 3.05,
+        "width_m": 1.22,
+        "height_m": 1.4,
+        "fill": 0.96,
+        "n_units": 3,
+        "contents": [
+          {
+            "item_index": 0,
+            "description": "A",
+            "count": 1,
+            "volume_l": 1500.0,
+            "y0": 0.0,
+            "y1": 0.5759
+          },
+          {
+            "item_index": 1,
+            "description": "B",
+            "count": 1,
+            "volume_l": 1500.0,
+            "y0": 0.5759,
+            "y1": 1.1518
+          },
+          {
+            "item_index": 2,
+            "description": "C",
+            "count": 1,
+            "volume_l": 500.0,
+            "y0": 1.1518,
+            "y1": 1.3437
+          }
+        ]
+      }
+    ]
+  }
+}
