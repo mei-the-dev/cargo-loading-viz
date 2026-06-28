@@ -140,6 +140,14 @@ npm run demo       # vite dev server (interactive playground)
 npm run test:visual # playwright smoke across presets
 ```
 
+## Support
+
+Built this in the open. If it saved you time, a coffee keeps it maintained ☕
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-support-ffdd00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://www.buymeacoffee.com/mei-the-dev)
+&nbsp;
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub_Sponsors-support-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/mei-the-dev)
+
 ## License
 
 [MIT](./LICENSE)

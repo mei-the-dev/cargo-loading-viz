@@ -17,6 +17,10 @@
     "freight"
   ],
   "author": "mei",
+  "funding": [
+    { "type": "buymeacoffee", "url": "https://www.buymeacoffee.com/mei-the-dev" },
+    { "type": "github", "url": "https://github.com/sponsors/mei-the-dev" }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mei-the-dev/cargo-loading-viz.git"
