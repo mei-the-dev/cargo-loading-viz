@@ -19,11 +19,11 @@
   "author": "mei",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mei/cargo-loading-viz.git"
+    "url": "git+https://github.com/mei-the-dev/cargo-loading-viz.git"
   },
-  "homepage": "https://github.com/mei/cargo-loading-viz#readme",
+  "homepage": "https://mei-the-dev.github.io/cargo-loading-viz/",
   "bugs": {
-    "url": "https://github.com/mei/cargo-loading-viz/issues"
+    "url": "https://github.com/mei-the-dev/cargo-loading-viz/issues"
   },
   "sideEffects": false,
   "files": [

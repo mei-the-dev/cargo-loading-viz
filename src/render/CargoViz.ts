@@ -44,6 +44,7 @@ export class CargoViz {
 
   private ulds = new Map<string, AnimUld>();
   private legendItems: LegendItem[] = [];
+  private lastUlds: PackedULD[] = [];
 
   private cam: CameraState;
   private readonly camInit: Pick<CameraState, "yaw" | "pitch" | "zoom">;
@@ -94,6 +95,7 @@ export class CargoViz {
 
   update(ulds: PackedULD[], items: LegendItem[] = []): void {
     this.legendItems = items;
+    this.lastUlds = ulds;
     const tgt = this.targets(ulds);
     const t = now();
     tgt.forEach((g, key) => {
@@ -134,6 +136,20 @@ export class CargoViz {
   }
   setLabelsVisible(v: boolean): void {
     this.opts.labels = v;
+  }
+  /** Point the legend at a (possibly later-mounted) container and repaint it. */
+  setLegendEl(el: HTMLElement | null): void {
+    this.opts.legendEl = el;
+    this.renderLegend();
+  }
+  /** Point the caption at a (possibly later-mounted) element and repaint it. */
+  setCaptionEl(el: HTMLElement | null): void {
+    this.opts.captionEl = el;
+    this.renderCaption(this.lastUlds);
+  }
+  setLegendVisible(v: boolean): void {
+    this.opts.legend = v;
+    this.renderLegend();
   }
   setAutorotate(v: boolean): void {
     this.cam.autorotate = v;
@@ -360,11 +376,15 @@ export class CargoViz {
       this.lastX = e.clientX;
       this.lastY = e.clientY;
     });
-    on(c, "pointerup", () => {
+    const endDrag = (): void => {
       this.dragging = false;
       if (this.resumeT) clearTimeout(this.resumeT);
       if (this.autoConfig) this.resumeT = setTimeout(() => (this.cam.autorotate = true), 2500);
-    });
+    };
+    on(c, "pointerup", endDrag);
+    // pointercancel fires (instead of pointerup) when the browser hijacks the pointer;
+    // without this the camera would stay frozen with autorotate off forever.
+    on(c, "pointercancel", endDrag);
     on(c, "dblclick", () => this.resetCamera());
     on(c, "wheel", (e) => {
       e.preventDefault();

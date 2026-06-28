@@ -32,12 +32,24 @@ export function recordWebM(canvas: HTMLCanvasElement, opts: RecordOptions = {}):
   const chunks: BlobPart[] = [];
 
   return new Promise<Blob>((resolve, reject) => {
+    let timer: ReturnType<typeof setTimeout>;
+    const cleanup = (): void => {
+      clearTimeout(timer);
+      for (const track of stream.getTracks()) track.stop();
+    };
     rec.ondataavailable = (e) => {
       if (e.data.size) chunks.push(e.data);
     };
-    rec.onstop = () => resolve(new Blob(chunks, { type: mime || "video/webm" }));
-    rec.onerror = () => reject(new Error("recordWebM: MediaRecorder error"));
+    rec.onstop = () => {
+      cleanup();
+      resolve(new Blob(chunks, { type: mime || "video/webm" }));
+    };
+    rec.onerror = (e) => {
+      cleanup();
+      const detail = (e as Event & { error?: { message?: string } }).error?.message;
+      reject(new Error(detail ? `recordWebM: ${detail}` : "recordWebM: MediaRecorder error"));
+    };
     rec.start();
-    setTimeout(() => rec.stop(), durationMs);
+    timer = setTimeout(() => rec.stop(), durationMs);
   });
 }

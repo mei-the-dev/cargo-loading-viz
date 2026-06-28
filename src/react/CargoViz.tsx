@@ -54,5 +54,17 @@ export function CargoViz({ ulds, items, className, style, onReady, ...options }:
     if (options.labels !== undefined) vizRef.current?.setLabelsVisible(options.labels);
   }, [options.labels]);
 
+  useEffect(() => {
+    if (options.legend !== undefined) vizRef.current?.setLegendVisible(options.legend);
+  }, [options.legend]);
+
+  useEffect(() => {
+    vizRef.current?.setLegendEl(options.legendEl ?? null);
+  }, [options.legendEl]);
+
+  useEffect(() => {
+    vizRef.current?.setCaptionEl(options.captionEl ?? null);
+  }, [options.captionEl]);
+
   return <canvas ref={canvasRef} className={className} style={style} />;
 }
